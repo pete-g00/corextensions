@@ -1,6 +1,6 @@
 name: corextensions
 description: Many helpful extensions to the core classes like string and iterable.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/pete-g00/corextensions
 
 environment:

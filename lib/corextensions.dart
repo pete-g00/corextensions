@@ -829,7 +829,7 @@ extension ListOfListExtension<E> on List<List<E>> {
   List<List<E>> spreadAndCombine() {
     var list = this[0].map((elt) => [elt]).toList();
     for (var i = 1; i < length; i++) {
-      if (this[i].length == 0) throw StateError('The list cannot be empty!');
+      if (this[i].isEmpty) throw StateError('The list cannot be empty!');
       final spread = <List<E>>[];
       for (var j = 0; j < list.length; j++) {
         for (var k = 0; k < this[i].length; k++) {
