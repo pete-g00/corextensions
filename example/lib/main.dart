@@ -7,7 +7,7 @@ void main(List<String> args) {
   String value = rawValue.removeExtraSpace();
   print(value); // 'I want to leave.'
   Iterable<RegExpMatch> matches = value.matchAll(vowels);
-  print(matches.map((match) => match.start)); // (3, 8, 11, 14)
+  print(matches.map((match) => match.start)); // (3, 8, 11, 12, 14)
   print(value.startsWithOneOf(vowels)); // false
 
   // iterable/list
@@ -26,11 +26,11 @@ void main(List<String> args) {
   Set<int> values = {1, 3, 5, -2};
   print(values.equals({-2, 5, 1, 3})); // true
   print(values.countWhere((value) => value.abs() > 2)); // 2
-  print(values.findLargestWhere((value) => (value - 2).abs())); // -2
+  print(values.largestWhere((value) => value)); // 5
 
   // map
   Map<String, int> map = {'first': 1, 'second': 2, 'third': 3, 'fourth': 4};
-  print(map.singleEntryWhere((key, value) => key.length == 6)); // MapEntry('second': 2)
+  print(map.singleEntryWhere((key, value) => key.length + value > 9)); // MapEntry('fourth':42)
   print(map.firstKeyWhere((key, value) => value.isEven)); // second
   print(map.reverse()); // {1: 'first', 2: 'second', 3: 'third', 4: 'fourth'}
 }
